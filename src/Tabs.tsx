@@ -17,6 +17,7 @@ function Tabs({
   theme,
   dark,
   style,
+  scrollEnabled = true,
   defaultIndex,
   mode = 'fixed',
   uppercase = true,
@@ -29,6 +30,7 @@ function Tabs({
   theme: Theme;
   dark?: boolean;
   style?: ViewStyle;
+  scrollEnabled ?: boolean,
   defaultIndex?: number;
   iconPosition?: IconPosition;
   showTextLabel?: boolean;
@@ -52,6 +54,7 @@ function Tabs({
       style={style}
       dark={dark}
       theme={theme}
+      scrollEnabled={scrollEnabled}
       defaultIndex={getDefaultIndex(defaultIndex, persistKey)}
       onChangeIndex={onInnerChangeIndex}
       uppercase={uppercase}

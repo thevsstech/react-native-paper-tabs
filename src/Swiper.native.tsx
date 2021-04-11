@@ -22,6 +22,7 @@ function SwiperNative(props: SwiperProps) {
     showTextLabel,
     uppercase,
     mode,
+    scrollEnabled,
     onChangeIndex,
     showLeadingSpace,
   } = props;
@@ -101,6 +102,7 @@ function SwiperNative(props: SwiperProps) {
           initialPage={index}
           onPageSelected={onPageSelected}
           ref={viewPager as any}
+          scrollEnabled={scrollEnabled}
           onPageScrollStateChanged={onPageScrollStateChanged}
           onPageScroll={Animated.event(
             [
