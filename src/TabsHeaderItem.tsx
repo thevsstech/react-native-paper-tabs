@@ -71,6 +71,10 @@ export default function TabsHeaderItem({
     childrenCount,
   });
 
+
+
+  const labelStyle = tab.props.labelStyle
+  const labelProps = tab.props.labelProps || {}
   return (
     <View
       key={tab.props.label}
@@ -119,10 +123,12 @@ export default function TabsHeaderItem({
           {showTextLabel ? (
             <AnimatedText
               selectable={false}
+              {...labelProps}
               style={[
                 styles.text,
                 iconPosition === 'top' && styles.textTop,
                 { ...theme.fonts.medium, color, opacity },
+                labelStyle
               ]}
             >
               {uppercase ? tab.props.label.toUpperCase() : tab.props.label}

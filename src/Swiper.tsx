@@ -36,7 +36,6 @@ function Swiper(props: SwiperProps) {
   const renderProps = {
     index,
     goTo,
-    children,
     theme,
     dark,
     style,
@@ -51,7 +50,9 @@ function Swiper(props: SwiperProps) {
 
   return (
     <View style={styles.root}>
-      <TabsHeader {...renderProps} />
+      <TabsHeader {...renderProps} >
+        {children}
+      </TabsHeader>
       <TabsContext.Provider value={{ goTo, index }}>
         {currentScreen}
       </TabsContext.Provider>
